@@ -1,0 +1,11 @@
+from datetime import datetime
+import serial
+
+ser = serial.Serial(port='/dev/ttyUSB0',baudrate=9600,)
+
+while  ser.isOpen():
+    datastring=ser.read(size=8)
+    print dattime.utcnow().isoformat(), datastring
+
+ser.close()
+
